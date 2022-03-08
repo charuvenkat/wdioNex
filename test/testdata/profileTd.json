@@ -1,0 +1,16 @@
+{
+
+     "Title" : ["Job Title: Quality Engineer I"],
+     "Email" : ["Email: cvenkateswaran@nexient.com"],
+     "Manager" : ["Manager: Gauri Pawar"],
+     "CareerCoach" : ["Career Coach: Unassigned"],
+     "UpdateManager" :["Update Manager: AUTO"] ,
+     "EmpProfileData": [
+          {
+            "Job Title:": "Quality Engineer II",
+            "Email": "tsarkisian@nexient.com",
+            "Manager": "Prajeesh Prabhakar",
+            "CareerCoach": "Shilpa Kotha",
+            "UpdateManager": "AUTO"
+          }]
+}

@@ -1,0 +1,59 @@
+{
+  "name": "webdriverio-tests",
+  "version": "1.0.0",
+  "description": "Automation Framework for WebdriverIO using MOCHA-JS",
+  "main": "index.js",
+  "scripts": {
+    "bamboo": "wdio run wdio.conf.js --spec ./test/specs/bamboo.js",
+    "nexport": "wdio run wdio.conf.js --spec ./test/specs/nexport.js",
+    "nexportLogin": "wdio run wdio.conf.js --spec ./test/specs/nexportLogInLogOut.js",
+    "nexportProfile": "wdio run wdio.conf.js --spec ./test/specs/nexportProfile.js",
+    "nexportEmpSearch": "wdio run wdio.conf.js --spec ./test/specs/nexportEmpSearch.js",
+    "nexportEmpSkill": "wdio run wdio.conf.js --spec ./test/specs/nexportEmpSkill.js",
+    "nexapiEmpProfile": "wdio run wdio.conf.js --spec ./test/specs/nexAPIEmpProfile.js",
+    "nexapiEmpGetSkill": "wdio run wdio.conf.js --spec ./test/specs/nexAPIEmpGetSkill.js",
+    "nexapiEmpPostSkill": "wdio run wdio.conf.js --spec ./test/specs/nexAPIEmpPostSkill.js",
+    "nexapi": "wdio run wdio.conf.js --spec ./test/specs/nexAPI.js",
+    "examples": "wdio run wdio.conf.js --spec ./test/specs/examples.js",
+    "wdio": "wdio run wdio.conf.js",
+    "allure": "allure generate --clean allure-results && allure open",
+    "encrypt": "wdio run wdio.conf.js --spec ./test/specs/encryptpassword.js",
+    "pretest": "rimraf allure-results && rimraf allure-report && rimraf test-screenshots && rimraf wdio-logs"
+  },
+  "keywords": [],
+  "author": "Nexient",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "@babel/register": "^7.16.7",
+    "@wdio/allure-reporter": "^7.16.13",
+    "@wdio/cli": "^7.16.16",
+    "@wdio/devtools-service": "^7.16.16",
+    "@wdio/local-runner": "^7.16.13",
+    "@wdio/mocha-framework": "^7.16.13",
+    "@wdio/spec-reporter": "^7.16.13",
+    "chai": "^4.3.4",
+    "chromedriver": "^98.0.0",
+    "cryptr": "^6.0.2",
+    "moment": "^2.29.1",
+    "rimraf": "^3.0.2",
+    "superagent": "^7.0.2",
+    "supertest": "^6.1.6",
+    "wdio-chromedriver-service": "^7.2.8",
+    "wdio-video-reporter": "^3.2.0",
+    "wdio-wait-for": "^2.2.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^14.3.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://repo.corp.nexient.com/nexient/practices/qe/test-automation-framework-js.git"
+  }
+}

@@ -1,0 +1,154 @@
+ 
+ it('Nexport Profile Adding Skill', async () => {
+
+  await NexportLoginPage.open();
+  await NexportLoginPage.loginClick();
+  await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+  await NexportProfilePage.profileClick();
+  await NexportSkillPage.skill(); 
+  await browser.pause(3000);
+
+  await $("(//md-select)[1]").click();
+  await $("//md-option/div[contains(text(),'" + testdata.skillexample.skill + "')]").waitForDisplayed();
+  await $("//md-option/div[contains(text(),'" + testdata.skillexample.skill + "')]").click();
+  await $("//input[@type='text']").waitForDisplayed();
+  await NexportSkillPage.getYrsOfExp(testdata.skillexample.yearsOfExperience);
+  await NexportSkillPage.skillLevelClick();
+  await browser.pause(3000);
+  await $("//md-option/div[contains(text(),'" + testdata.skillexample.skillLevel + "')]").waitForDisplayed();
+  await $("//md-option/div[contains(text(),'" + testdata.skillexample.skillLevel + "')]").click();
+  await NexportSkillPage.skillDesireClick();   
+  await $("//md-option/div[contains(text(),'" + testdata.skillexample.desireToUseSkill + "')]").waitForDisplayed();
+  await $("//md-option/div[contains(text(),'" + testdata.skillexample.desireToUseSkill + "')]").click();
+
+  await NexportSkillPage.getSkillType(testdata.skillexample.skillType);
+  await NexportSkillPage.skillSave();
+
+  await browser.pause(3000);
+
+  await NexportHomePage.logoutClick();
+});
+ 
+ 
+ //srees above ************************************
+ 
+ xit('Sree Nexport Profile Adding Skill', async () => {
+
+    await NexportLoginPage.open();
+    await NexportLoginPage.loginClick();
+    await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD);
+    await NexportProfilePage.profileClick();
+    await NexportSkillPage.skill(); 
+    await browser.pause(3000);
+ 
+    await $("(//md-select)[1]").click();
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.skill + "')]").waitForDisplayed();
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.skill + "')]").click();
+    await $("//input[@type='text']").waitForDisplayed();
+    await NexportSkillPage.getYrsOfExp(testdata.skillexample.yearsOfExperience);
+    await NexportSkillPage.skillLevelClick();
+    await browser.pause(3000);
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.skillLevel + "')]").waitForDisplayed();
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.skillLevel + "')]").click();
+    await NexportSkillPage.skillDesireClick();   
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.desireToUseSkill + "')]").waitForDisplayed();
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.desireToUseSkill + "')]").click();
+ 
+    await NexportSkillPage.getSkillType(testdata.skillexample.skillType);
+
+    await NexportSkillPage.skillSave();
+    await browser.pause(3000);
+
+    // await NexportSkillPage.skillCancel();
+    // await browser.pause(3000);
+   
+    const skillActual = await NexportSkillPage.skillValidaton();
+    var expectedSkill = testdata.skillexample.ExpectedSkill;
+    Asserts.equal(skillActual, expectedSkill);
+    await browser.pause(3000);
+
+    await NexportHomePage.logoutClick();
+
+});
+
+
+
+    /***tried with sasi below code******** */
+    //await $("//button[@aria-label='Cancel Create Skill']").waitForDisplayed();
+  //  await $("(//md-select)[1]").waitForDisplayed();
+  //await $("(//span[@class='md-select-icon'])[1]").click()
+  //await $("//span[text()='Skill :']").click()
+  //await $("#select_value_label_1213").click()
+ //await $("(//div/md-input-container/md-select/md-select-value)[1]").click();
+
+
+
+ //*********my actual script */
+ it('Nexport Profile Adding Skill', async () => {  
+  
+    await NexportLoginPage.open();
+    await NexportLoginPage.loginClick();
+    await NexportLoginPage.login(process.env.NEXUSERNAME, process.env.NEXPASSWORD); 
+    await NexportProfilePage.profileClick();
+     await NexportSkillPage.skill();
+    await browser.pause(3000);
+    
+   await $("(//md-select)[1]").click();
+   await $("//md-option/div[contains(text(),'"+testdata.skillexample.Skill+"')]").waitForDisplayed();
+  await $("//md-option/div[contains(text(),'"+testdata.skillexample.Skill+"')]").click();
+
+   
+    //await NexportSkillPage.skillClick();
+    //await browser.pause(3000)
+   
+   // await NexportSkillPage.getSkill(testdata.Skill);
+   // await browser.pause(3000)
+    //await  browser.waitUntil(() => $("//md-select-value/span/div").isDisplayed(),
+    //{ timeout : 5000, timeoutMsg : 'Error msg didnt appear'}) 
+
+    await $("//input[@type='text']").waitForDisplayed();
+    await NexportSkillPage.getYrsOfExp(testdata.skillexample.YearsOfExperience);
+    
+    await NexportSkillPage.skillLevelClick();
+    await browser.pause(3000);
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.skillLevel + "')]").waitForDisplayed();
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.skillLevel + "')]").click();
+    
+   // await NexportSkillPage.skillLevelClick(); 
+    //await browser.pause(3000)
+    //await NexportSkillPage.getSkillLevel(testdata.SkillLevel);
+
+
+    await NexportSkillPage.skillDesireClick();   
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.desireToUseSkill + "')]").waitForDisplayed();
+    await $("//md-option/div[contains(text(),'" + testdata.skillexample.desireToUseSkill + "')]").click();
+
+    //await NexportSkillPage.skillDesireClick(); 
+    //await browser.pause(3000)
+    //await NexportSkillPage.getDesireToUseSkill(testdata.DesireToUseSkill);
+    
+    //await browser.pause(3000)
+    await NexportSkillPage.getSkillType(testdata.skillexample.SkillType)
+
+    
+   // await browser.pause(2000);
+    await NexportSkillPage.skillSave();
+  
+   await browser.pause(3000);
+   
+    // await NexportSkillPage.skillCancel();
+    // await browser.pause(3000);
+   
+    // const skillActual = await NexportSkillPage.skillValidaton();
+    // var expectedSkill = testdata.ExpectedSkill;
+    // Asserts.equal(skillActual, expectedSkill);
+   // await browser.pause(3000);
+
+    await NexportHomePage.logoutClick();
+
+}); 
+
+
+
+    //await  browser.waitUntil(() => $("//md-select-value/span/div").isDisplayed(),
+    //{ timeout : 5000, timeoutMsg : 'Error msg didnt appear'}) 
